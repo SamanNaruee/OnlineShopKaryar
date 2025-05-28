@@ -175,7 +175,7 @@ class Notification(models.Model):
         ('U', 'Unread')
     ]
 
-    user = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE) # TODO: change to User then remove customer in all cases
     is_admin = models.BooleanField(default=False) # if user is admin
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
